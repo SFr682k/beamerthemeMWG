@@ -22,6 +22,7 @@
 %%	The MWG logo has been converted to a path from a *.png file with Inkscape and exported to TikZ code using the tikz-export library
 %%	(https://github.com/kjellmf/svg2tikz).
 %%	Due to the complexity of the logo, the TikZ source got quite huge; therefore, it takes a bit long to compile it.
+%%	By default, the theme loads a simplified version of the logo which reduces the compiling time to one third.
 %%
 %%	---------------------------------------------------------------------------------------------------------------------------------------------
 %%
@@ -96,9 +97,9 @@
 	
 	\subsection*{Important note}
 	\addcontentsline{toc}{subsection}{Important note}
-	Since the MWG logo included in the footline by default consists of a Ti\textit{k}Z source approximately 5\,850~lines long, presentations may compile very long time. This can be very nasty, especially during the process of creating the presentation. \\
-	You can avoid this by passing the \texttt{draft} option which removes the logo \emph{temporary}. \\
-	Besides that, many theme options applicable may \emph{permanently} remove or replace the logo. See section \ref{themeoptions} for further details.
+	Since the MWG logo included in the footline by default consists of a Ti\textit{k}Z source up to 5\,850~lines long, presentations may compile very long time. This can be very nasty, especially during the process of creating the presentation. \\
+	\emph{To reduce the amount of time required for compiling, the theme uses a simplified version of the logo.} Simplified means that details not visible to your audience got removed, resulting in a reduction of compilation time to approx. $\tfrac13$. However, the detailed version is still available when using the \texttt{hqlogo} option. \\
+	You can remove the logo \emph{temporary} by passing the \texttt{draft} option or \emph{permanently} by passing other options. See section \ref{themeoptions} for further details.
 	
 	
 	\subsection*{Dependencies and other requirements}
@@ -186,6 +187,10 @@
     \medskip
     \DescribeMacro{externallogo}
     Removes the logo from the footline and the logo specified with the \mintinline{LaTeX}{\logo} command will be shown on the right--hand side directly above the footline
+    
+    \medskip
+    \DescribeMacro{hqlogo}
+    Uses the detailed version of the logo instead of the simplified one
     
     \medskip
 	\DescribeMacro{nosmallcaps}
