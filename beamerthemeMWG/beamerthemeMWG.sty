@@ -1,4 +1,4 @@
-%%	This is file 'beamerthemeMWG.sty', Version 2017-08-13
+%%	This is file 'beamerthemeMWG.sty', Version 2017-08-20
 %%	Copyright 2017 Sebastian Friedl <sfr682k@t-online.de>
 %% 
 %%	This work may be distributed and/or modified under the conditions of the LaTeX Project
@@ -33,7 +33,7 @@
 
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{beamerthemeMWG}[2017/08/13 MWG beamer theme]
+\ProvidesPackage{beamerthemeMWG}[2017/08/20 MWG beamer theme]
 
 % Switches to presentation mode
 \mode<presentation>
@@ -44,7 +44,7 @@
 \typeout{}
 \typeout{========================================}
 \typeout{MWG LaTeX beamer theme}
-\typeout{Version 2017/08/13}
+\typeout{Version 2017/08/20}
 \typeout{}
 \typeout{(c) 2017 Sebastian Friedl}
 \typeout{Licensed under LPPL 1.3c or later}
@@ -147,7 +147,7 @@
 		% Layout for title frame without titlegraphic
 		\begin{tikzpicture}[remember picture, overlay]
 			% Presentation title
-			\draw (current page.west) ++(2em,  0.1em) node[anchor=south west, align=left]%
+			\draw (current page.west) ++(2em,  0.6em) node[anchor=base west, align=left]%
 				{{\usebeamerfont*{title}\usebeamercolor*{title}\ifx\inserttitle\@empty\else\inserttitle\fi}
 				 \ifx\inserttitle\@empty\else \ifx\insertsubtitle\@empty\else \\ \fi \fi
 				 {\usebeamerfont*{subtitle}\usebeamercolor*{subtitle}\ifx\insertsubtitle\@empty\else\insertsubtitle\fi}};
@@ -193,7 +193,7 @@
 		% Layout for part frame without titlegraphic
 		\begin{tikzpicture}[remember picture, overlay]
 			% Part title
-			\draw (current page.west) ++(2em,  0.1em) node[anchor=south west, align=left]%
+			\draw (current page.west) ++(2em,  0.6em) node[anchor=base west, align=left]%
 			{\usebeamerfont*{part title}\usebeamercolor*{title}\insertromanpartnumber.~ \insertpart};
 			
 			% Separation line
@@ -224,7 +224,7 @@
 		% Layout for section frame without titlegraphic
 		\begin{tikzpicture}[remember picture, overlay]
 			% Section title
-			\draw (current page.west) ++(2em,  0.1em) node[anchor=south west, align=left]%
+			\draw (current page.west) ++(2em,  0.6em) node[anchor=base west, align=left]%
 			{\usebeamerfont*{section title}\usebeamercolor*{title}\insertsectionnumber.~ \insertsection};
 			
 			% Separation line
@@ -255,7 +255,7 @@
 		% Layout for subsection frame without titlegraphic
 		\begin{tikzpicture}[remember picture, overlay]
 			% Section title
-			\draw (current page.west) ++(2em,  0.1em) node[anchor=south west, align=left]%
+			\draw (current page.west) ++(2em,  0.6em) node[anchor=base west, align=left]%
 			{\usebeamerfont*{section title}\usebeamercolor*{title}\insertsectionnumber.~ \insertsection};
 			
 			% Separation line
@@ -291,7 +291,7 @@
 		% Layout for appendix part frame without titlegraphic
 		\begin{tikzpicture}[remember picture, overlay]
 			% "Appendix" label
-			\draw (current page.west) ++(2em,  0.1em) node[anchor=south west, align=left]%
+			\draw (current page.west) ++(2em,  0.6em) node[anchor=base west, align=left]%
 			{\usebeamerfont*{part title}\usebeamercolor*{title}\insertpart};
 			
 			% Separation line
