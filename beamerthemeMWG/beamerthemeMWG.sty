@@ -1,4 +1,4 @@
-%%	This is file 'beamerthemeMWG.sty', Version 2017-08-29
+%%	This is file 'beamerthemeMWG.sty', Version 2017-09-08
 %%	Copyright 2017 Sebastian Friedl <sfr682k@t-online.de>
 %% 
 %%	This work may be distributed and/or modified under the conditions of the LaTeX Project
@@ -35,7 +35,7 @@
 
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{beamerthemeMWG}[2017/08/29 MWG beamer theme]
+\ProvidesPackage{beamerthemeMWG}[2017/09/08 MWG beamer theme]
 
 % Switches to presentation mode
 \mode<presentation>
@@ -43,7 +43,7 @@
 \typeout{}
 \typeout{========================================}
 \typeout{MWG LaTeX beamer theme}
-\typeout{Version 2017/08/29}
+\typeout{Version 2017/09/08}
 \typeout{}
 \typeout{(c) 2017 Sebastian Friedl}
 \typeout{Licensed under LPPL 1.3c or later}
@@ -151,7 +151,7 @@
 % INNERSTYLING II (Title & stucture frames) -----------------------------------------------------------------------------------------------------
 
 % Title frame layout
-\setbeamertemplate{title page}{%
+\defbeamertemplate*{title page}{MWG}{%
 	\ifx\insertframetitle\@empty \frametitle{~} \fi
 	
 	\ifx\inserttitlegraphic\@empty
@@ -197,7 +197,7 @@
 }
 
 % Part frame layout
-\setbeamertemplate{part page}{%
+\defbeamertemplate*{part page}{MWG}{%
 	\ifx\insertframetitle\@empty \frametitle{~} \fi
 	
 	\ifx\inserttitlegraphic\@empty
@@ -228,7 +228,7 @@
 }
 
 % Section frame layout
-\setbeamertemplate{section page}{%
+\defbeamertemplate*{section page}{MWG}{%
 	\ifx\insertframetitle\@empty \frametitle{~} \fi
 	
 	\ifx\inserttitlegraphic\@empty
@@ -259,7 +259,7 @@
 }
 
 % Subsection frame layout
-\setbeamertemplate{subsection page}{%
+\defbeamertemplate*{subsection page}{MWG}{%
 	\ifx\insertframetitle\@empty \frametitle{~} \fi
 	
 	\ifx\inserttitlegraphic\@empty
