@@ -1,4 +1,4 @@
-%%	This is file 'beamerthemeMWG.sty', Version 2017-09-08
+%%	This is file 'beamerthemeMWG.sty', Version 2017-10-25
 %%	Copyright 2017 Sebastian Friedl <sfr682k@t-online.de>
 %% 
 %%	This work may be distributed and/or modified under the conditions of the LaTeX Project
@@ -35,7 +35,7 @@
 
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{beamerthemeMWG}[2017/09/08 MWG beamer theme]
+\ProvidesPackage{beamerthemeMWG}[2017/10/25 MWG beamer theme]
 
 % Switches to presentation mode
 \mode<presentation>
@@ -43,7 +43,7 @@
 \typeout{}
 \typeout{========================================}
 \typeout{MWG LaTeX beamer theme}
-\typeout{Version 2017/09/08}
+\typeout{Version 2017/10/25}
 \typeout{}
 \typeout{(c) 2017 Sebastian Friedl}
 \typeout{Licensed under LPPL 1.3c or later}
@@ -159,8 +159,8 @@
 		\begin{tikzpicture}[remember picture, overlay]
 			% Presentation title
 			\draw (current page.west) ++(2em,  0.6em) node[anchor=base west, align=left]%
-				{{\usebeamerfont*{title}\usebeamercolor*{title}\ifx\inserttitle\@empty\else\inserttitle\fi}
-				 \ifx\inserttitle\@empty\else \ifx\insertsubtitle\@empty\else \\ \fi \fi
+				{{\usebeamerfont*{title}\usebeamercolor*{title}\ifx\inserttitle\@empty\else\inserttitle\fi}%
+				 \ifx\inserttitle\@empty\else \ifx\insertsubtitle\@empty\else \\ \fi\fi%
 				 {\usebeamerfont*{subtitle}\usebeamercolor*{subtitle}\ifx\insertsubtitle\@empty\else\insertsubtitle\fi}};
 		
 			% Separation line
@@ -169,8 +169,8 @@
 			% Author & institute
 			\draw (current page.west) ++(2em, -0.3em) node[anchor=north west, align=left]%
 				{{\usebeamerfont*{author}\usebeamercolor*{author}\ifx\beamer@shortauthor\@empty\else\insertauthor\fi} \\%
-				 {\usebeamerfont*{institute}\usebeamercolor*{institute}\ifx\insertinstitute\@empty\else\insertinstitute \fi}
-				 \ifx\insertinstitute\@empty\else \ifx\insertdate\@empty\else \\[\smallskipamount] \fi \fi
+				 {\usebeamerfont*{institute}\usebeamercolor*{institute}\ifx\insertinstitute\@empty\else\insertinstitute \fi}%
+				 \ifx\insertinstitute\@empty\else \ifx\insertdate\@empty\else \\[\smallskipamount] \fi\fi%
 				 {\usebeamerfont*{date}\usebeamercolor*{date}\ifx\insertdate\@empty\else\insertdate\fi}};
 		\end{tikzpicture}
 	\else
@@ -185,12 +185,12 @@
 			
 			% Presentation title, author & institute
 			\draw (current page.west) ++(2em, -0.3em) node[anchor=north west, align=left]%
-			   {{\usebeamerfont*{title}\usebeamercolor*{title}\ifx\inserttitle\@empty\else\inserttitle\fi}
-			   	\ifx\inserttitle\@empty\else \ifx\insertsubtitle\@empty\else \\ \fi \fi
+			   {{\usebeamerfont*{title}\usebeamercolor*{title}\ifx\inserttitle\@empty\else\inserttitle\fi}%
+			   	\ifx\inserttitle\@empty\else \ifx\insertsubtitle\@empty\else \\ \fi\fi%
 			   	{\usebeamerfont*{subtitle}\usebeamercolor*{subtitle}\ifx\insertsubtitle\@empty\else\insertsubtitle\fi} \\[\smallskipamount]%
 				{\usebeamerfont*{author}\usebeamercolor*{author}\ifx\beamer@shortauthor\@empty\else\insertauthor\fi} \\%
-				{\usebeamerfont*{institute}\usebeamercolor*{institute}\ifx\insertinstitute\@empty\else\insertinstitute\fi}
-				\ifx\insertinstitute\@empty\else \ifx\insertdate\@empty\else \\[\smallskipamount] \fi \fi
+				{\usebeamerfont*{institute}\usebeamercolor*{institute}\ifx\insertinstitute\@empty\else\insertinstitute\fi}%
+				\ifx\insertinstitute\@empty\else \ifx\insertdate\@empty\else \\[\smallskipamount] \fi\fi%
 				{\usebeamerfont*{date}\usebeamercolor*{date}\ifx\insertdate\@empty\else\insertdate\fi}};
 		\end{tikzpicture}
 	\fi
