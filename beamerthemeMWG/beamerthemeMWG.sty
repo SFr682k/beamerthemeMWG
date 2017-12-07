@@ -1,4 +1,4 @@
-%%	This is file 'beamerthemeMWG.sty', Version 2017-12-06
+%%	This is file 'beamerthemeMWG.sty', Version 2017-12-07
 %%	Copyright 2017 Sebastian Friedl <sfr682k@t-online.de>
 %% 
 %%	This work may be distributed and/or modified under the conditions of the LaTeX Project
@@ -35,7 +35,7 @@
 
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{beamerthemeMWG}[2017/12/06 MWG beamer theme]
+\ProvidesPackage{beamerthemeMWG}[2017/12/07 MWG beamer theme]
 
 % Switches to presentation mode
 \mode<presentation>
@@ -43,7 +43,7 @@
 \typeout{}
 \typeout{========================================}
 \typeout{MWG LaTeX beamer theme}
-\typeout{Version 2017/12/06}
+\typeout{Version 2017/12/07}
 \typeout{}
 \typeout{(c) 2017 Sebastian Friedl}
 \typeout{Licensed under LPPL 1.3c or later}
@@ -154,175 +154,153 @@
 \defbeamertemplate*{title page}{MWG}{%
 	\ifx\insertframetitle\@empty \frametitle{~} \fi
 	
-	\ifx\inserttitlegraphic\@empty
-		% Layout for title frame without titlegraphic
-		\begin{tikzpicture}[remember picture, overlay]
+	\begin{tikzpicture}[remember picture, overlay]
+		% Separation line
+		\draw[MWGRed, very thick] (current page.west) ++(2.2em,0) -- (current page.east);
+		
+		\ifx\inserttitlegraphic\@empty
+			% Layout for title frame without titlegraphic
 			% Presentation title
 			\draw (current page.west) ++(2em,  0.6em) node[anchor=base west, align=left]%
 				{{\usebeamerfont*{title}\usebeamercolor*{title}\ifx\inserttitle\@empty\else\inserttitle\fi}%
-				 \ifx\inserttitle\@empty\else \ifx\insertsubtitle\@empty\else \\ \fi\fi%
-				 {\usebeamerfont*{subtitle}\usebeamercolor*{subtitle}\ifx\insertsubtitle\@empty\else\insertsubtitle\fi}};
-		
-			% Separation line
-			\draw[MWGRed, very thick] (current page.west) ++(2.2em,0) -- (current page.east);
+				\ifx\inserttitle\@empty\else \ifx\insertsubtitle\@empty\else \\ \fi\fi%
+				{\usebeamerfont*{subtitle}\usebeamercolor*{subtitle}\ifx\insertsubtitle\@empty\else\insertsubtitle\fi}};
 		
 			% Author & institute
 			\draw (current page.west) ++(2em, -0.3em) node[anchor=north west, align=left]%
 				{{\usebeamerfont*{author}\usebeamercolor*{author}\ifx\beamer@shortauthor\@empty\else\insertauthor\fi} \\%
-				 {\usebeamerfont*{institute}\usebeamercolor*{institute}\ifx\insertinstitute\@empty\else\insertinstitute \fi}%
-				 \ifx\insertinstitute\@empty\else \ifx\insertdate\@empty\else \\[\smallskipamount] \fi\fi%
-				 {\usebeamerfont*{date}\usebeamercolor*{date}\ifx\insertdate\@empty\else\insertdate\fi}};
-		\end{tikzpicture}
-	\else
-		% Layout for title frame with titlegraphic
-		\begin{tikzpicture}[remember picture, overlay]
+				{\usebeamerfont*{institute}\usebeamercolor*{institute}\ifx\insertinstitute\@empty\else\insertinstitute \fi}%
+				\ifx\insertinstitute\@empty\else \ifx\insertdate\@empty\else \\[\smallskipamount] \fi\fi%
+				{\usebeamerfont*{date}\usebeamercolor*{date}\ifx\insertdate\@empty\else\insertdate\fi}};
+		\else
+			% Layout for title frame with titlegraphic
 			% Titlegraphic
 			\draw (current page.west) ++(2em,  0.15em) node[anchor=south west, align=left]%
 			{\usebeamercolor*{titlegraphic}\inserttitlegraphic};
 			
-			% Separation line
-			\draw[MWGRed, very thick] (current page.west) ++(2.2em,0) -- (current page.east);
-			
 			% Presentation title, author & institute
 			\draw (current page.west) ++(2em, -0.3em) node[anchor=north west, align=left]%
-			   {{\usebeamerfont*{title}\usebeamercolor*{title}\ifx\inserttitle\@empty\else\inserttitle\fi}%
-			   	\ifx\inserttitle\@empty\else \ifx\insertsubtitle\@empty\else \\ \fi\fi%
-			   	{\usebeamerfont*{subtitle}\usebeamercolor*{subtitle}\ifx\insertsubtitle\@empty\else\insertsubtitle\fi} \\[\smallskipamount]%
+			{{\usebeamerfont*{title}\usebeamercolor*{title}\ifx\inserttitle\@empty\else\inserttitle\fi}%
+				\ifx\inserttitle\@empty\else \ifx\insertsubtitle\@empty\else \\ \fi\fi%
+				{\usebeamerfont*{subtitle}\usebeamercolor*{subtitle}\ifx\insertsubtitle\@empty\else\insertsubtitle\fi} \\[\smallskipamount]%
 				{\usebeamerfont*{author}\usebeamercolor*{author}\ifx\beamer@shortauthor\@empty\else\insertauthor\fi} \\%
 				{\usebeamerfont*{institute}\usebeamercolor*{institute}\ifx\insertinstitute\@empty\else\insertinstitute\fi}%
 				\ifx\insertinstitute\@empty\else \ifx\insertdate\@empty\else \\[\smallskipamount] \fi\fi%
 				{\usebeamerfont*{date}\usebeamercolor*{date}\ifx\insertdate\@empty\else\insertdate\fi}};
-		\end{tikzpicture}
-	\fi
+		\fi
+	\end{tikzpicture}
 }
 
 % Part frame layout
 \defbeamertemplate*{part page}{MWG}{%
 	\ifx\insertframetitle\@empty \frametitle{~} \fi
 	
-	\ifx\inserttitlegraphic\@empty
-		% Layout for part frame without titlegraphic
-		\begin{tikzpicture}[remember picture, overlay]
+	\begin{tikzpicture}[remember picture, overlay]
+		% Separation line
+		\draw[MWGRed, very thick] (current page.west) ++(2.2em,0) -- (current page.east);
+		
+		\ifx\inserttitlegraphic\@empty
+			% Layout for part frame without titlegraphic
 			% Part title
 			\draw (current page.west) ++(2em,  0.6em) node[anchor=base west, align=left]%
-			{\usebeamerfont*{part title}\usebeamercolor*{title}\insertromanpartnumber.~ \insertpart};
-			
-			% Separation line
-			\draw[MWGRed, very thick] (current page.west) ++(2.2em,0) -- (current page.east);
-		\end{tikzpicture}
-	\else
-		% Layout for part frame with titlegraphic
-		\begin{tikzpicture}[remember picture, overlay]
+				{\usebeamerfont*{part title}\usebeamercolor*{title}\insertromanpartnumber.~ \insertpart};
+		\else
+			% Layout for part frame with titlegraphic
 			% Titlegraphic
 			\draw (current page.west) ++(2em,  0.15em) node[anchor=south west, align=left]%
-			{\usebeamercolor*{titlegraphic}\inserttitlegraphic};
-			
-			% Separation line
-			\draw[MWGRed, very thick] (current page.west) ++(2.2em,0) -- (current page.east);
-			
+				{\usebeamercolor*{titlegraphic}\inserttitlegraphic};
+					
 			% Part title
 			\draw (current page.west) ++(2em, -0.3em) node[anchor=north west, align=left]%
-			{\usebeamerfont*{part title}\usebeamercolor*{title}\insertromanpartnumber.~ \insertpart};
-		\end{tikzpicture}
-	\fi
+				{\usebeamerfont*{part title}\usebeamercolor*{title}\insertromanpartnumber.~ \insertpart};
+		\fi
+	\end{tikzpicture}
 }
 
 % Section frame layout
 \defbeamertemplate*{section page}{MWG}{%
 	\ifx\insertframetitle\@empty \frametitle{~} \fi
 	
-	\ifx\inserttitlegraphic\@empty
-		% Layout for section frame without titlegraphic
-		\begin{tikzpicture}[remember picture, overlay]
+	\begin{tikzpicture}[remember picture, overlay]
+		% Separation line
+		\draw[MWGRed, very thick] (current page.west) ++(2.2em,0) -- (current page.east);
+		
+		\ifx\inserttitlegraphic\@empty
 			% Section title
 			\draw (current page.west) ++(2em,  0.6em) node[anchor=base west, align=left]%
-			{\usebeamerfont*{section title}\usebeamercolor*{title}\thesection.~ \insertsection};
-			
-			% Separation line
-			\draw[MWGRed, very thick] (current page.west) ++(2.2em,0) -- (current page.east);
-		\end{tikzpicture}
-	\else
-		% Layout for section frame with titlegraphic
-		\begin{tikzpicture}[remember picture, overlay]
+				{\usebeamerfont*{section title}\usebeamercolor*{title}\thesection.~ \insertsection};
+		\else
+			% Layout for section frame with titlegraphic
 			% Titlegraphic
 			\draw (current page.west) ++(2em,  0.15em) node[anchor=south west, align=left]%
-			{\usebeamercolor*{titlegraphic}\inserttitlegraphic};
-			
-			% Separation line
-			\draw[MWGRed, very thick] (current page.west) ++(2.2em,0) -- (current page.east);
+				{\usebeamercolor*{titlegraphic}\inserttitlegraphic};
 			
 			% Section title
 			\draw (current page.west) ++(2em, -0.3em) node[anchor=north west, align=left]%
-			{\usebeamerfont*{section title}\usebeamercolor*{title}\thesection.~ \insertsection};
-		\end{tikzpicture}
-	\fi
+				{\usebeamerfont*{section title}\usebeamercolor*{title}\thesection.~ \insertsection};
+		\fi
+	\end{tikzpicture}
 }
 
 % Subsection frame layout
 \defbeamertemplate*{subsection page}{MWG}{%
 	\ifx\insertframetitle\@empty \frametitle{~} \fi
 	
-	\ifx\inserttitlegraphic\@empty
-		% Layout for subsection frame without titlegraphic
-		\begin{tikzpicture}[remember picture, overlay]
+	\begin{tikzpicture}[remember picture, overlay]
+		% Separation line
+		\draw[MWGRed, very thick] (current page.west) ++(2.2em,0) -- (current page.east);
+	
+		\ifx\inserttitlegraphic\@empty
+			% Layout for subsection frame without titlegraphic
 			% Section title
 			\draw (current page.west) ++(2em,  0.6em) node[anchor=base west, align=left]%
-			{\usebeamerfont*{section title}\usebeamercolor*{title}\thesection.~ \insertsection};
-			
-			% Separation line
-			\draw[MWGRed, very thick] (current page.west) ++(2.2em,0) -- (current page.east);
+				{\usebeamerfont*{section title}\usebeamercolor*{title}\thesection.~ \insertsection};
 			
 			% Subsection title
 			\draw (current page.west) ++(2em, -0.3em) node[anchor=north west, align=left]%
-			{\usebeamerfont*{subsection title}\usebeamercolor*{title}\thesection.\thesubsection~ \insertsubsection};
-		\end{tikzpicture}
-	\else
-		% Layout for subsecion frame with titlegraphic
-		\begin{tikzpicture}[remember picture, overlay]
+				{\usebeamerfont*{subsection title}\usebeamercolor*{title}\thesection.\thesubsection~ \insertsubsection};
+		\else
+			% Layout for subsecion frame with titlegraphic
 			% Titlegraphic
 			\draw (current page.west) ++(2em,  0.15em) node[anchor=south west, align=left]%
-			{\usebeamercolor*{titlegraphic}\inserttitlegraphic};
-			
-			% Separation line
-			\draw[MWGRed, very thick] (current page.west) ++(2.2em,0) -- (current page.east);
-			
+				{\usebeamercolor*{titlegraphic}\inserttitlegraphic};
+				
 			% Section & subsection title
 			\draw (current page.west) ++(2em, -0.3em) node[anchor=north west, align=left]%
 				{{\usebeamerfont*{section title}\usebeamercolor*{title}\thesection.~ \insertsection} \\%
 				 {\usebeamerfont*{subsection title}\usebeamercolor*{title}\thesection.\thesubsection~ \insertsubsection}};
-		\end{tikzpicture}
-	\fi
+		\fi
+	\end{tikzpicture}
 }
 
 % Appendix part frame layout
 \defbeamertemplate{part page}{appendix}{%
 	\ifx\insertframetitle\@empty \frametitle{~} \fi
 	
-	\ifx\inserttitlegraphic\@empty
-		% Layout for appendix part frame without titlegraphic
-		\begin{tikzpicture}[remember picture, overlay]
+	\begin{tikzpicture}[remember picture, overlay]
+		% Separation line
+		\draw[MWGRed, very thick] (current page.west) ++(2.2em,0) -- (current page.east);
+	
+		\ifx\inserttitlegraphic\@empty
+			% Layout for appendix part frame without titlegraphic
+		
 			% "Appendix" label
 			\draw (current page.west) ++(2em,  0.6em) node[anchor=base west, align=left]%
-			{\usebeamerfont*{part title}\usebeamercolor*{title}\insertpart};
-			
-			% Separation line
-			\draw[MWGRed, very thick] (current page.west) ++(2.2em,0) -- (current page.east);
-		\end{tikzpicture}
-	\else
-		% Layout for title frame with titlegraphic
-		\begin{tikzpicture}[remember picture, overlay]
+				{\usebeamerfont*{part title}\usebeamercolor*{title}\insertpart};
+		\else
+			% Layout for title frame with titlegraphic
 			% Titlegraphic
 			\draw (current page.west) ++(2em,  0.15em) node[anchor=south west, align=left]%
-			{\usebeamercolor*{titlegraphic}\inserttitlegraphic};
+				{\usebeamercolor*{titlegraphic}\inserttitlegraphic};
 			
 			% Separation line
 			\draw[MWGRed, very thick] (current page.west) ++(2.2em,0) -- (current page.east);
 			
 			% "Appendix" label
 			\draw (current page.west) ++(2em, -0.3em) node[anchor=north west, align=left]%
-			{\usebeamerfont*{part title}\usebeamercolor*{title}\insertpart};
-		\end{tikzpicture}
-	\fi
+				{\usebeamerfont*{part title}\usebeamercolor*{title}\insertpart};
+		\fi
+	\end{tikzpicture}
 }
 
 
