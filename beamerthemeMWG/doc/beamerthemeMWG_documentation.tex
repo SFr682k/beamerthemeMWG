@@ -1,4 +1,4 @@
-%%	This is file 'beamerthemeMWG_documentation.tex', Version 2018-01-09
+%%	This is file 'beamerthemeMWG_documentation.tex', Version 2018-04-04
 %%	Copyright 2017-18 Sebastian Friedl <sfr682k@t-online.de>
 %% 
 %%	This work may be distributed and/or modified under the conditions of the LaTeX Project
@@ -10,7 +10,7 @@
 %%	This work has the LPPL maintenace status 'maintained'.
 %%	The current maintainer of this work is Sebastian Friedl.
 %%
-%%	This work consists of the files beamerthemeMWG.sty and beamerthemeMWG_documentation.tex
+%%	This work consists of the files beamerthemeMWG.sty, beamerthemMWGLogo.pdf, beamerthemeMWGLogo.eps and beamerthemeMWG_documentation.tex
 %%
 %%	---------------------------------------------------------------------------------------------------------------------------------------------
 %%
@@ -19,10 +19,7 @@
 %%
 %%	I created the theme for personal use while being student there.
 %%
-%%	The MWG logo has been converted to a path from a *.png file with Inkscape and exported to TikZ code using the tikz-export library
-%%	(https://github.com/kjellmf/svg2tikz).
-%%	Due to the complexity of the logo, the TikZ source got quite huge; therefore, it takes a bit long to compile it.
-%%	By default, the theme loads a simplified version of the logo which reduces the compiling time to one third.
+%%	The MWG logo has been converted to a vector graphics from a *.png file with Inkscape
 %%
 %%	---------------------------------------------------------------------------------------------------------------------------------------------
 %%
@@ -65,11 +62,13 @@
 
 \usepackage[left=4.50cm,right=2.75cm,top=3.25cm,bottom=2.75cm,nohead]{geometry}
 
+\MakeShortVerb{"}
+
 \hyphenation{con-fi-gu-ra-tion ge-ne-ral ge-ne-ra-ted wri-ting}
 
 \title{The MWG \LaTeX\ beamer theme}
 \author{Sebastian Friedl \\ \href{mailto:sfr682k@t-online.de}{\texttt{sfr682k@t-online.de}}}
-\date{January 9, 2018}
+\date{April 4, 2018}
 
 \hypersetup{pdftitle={The MWG \LaTeX\ beamer theme},pdfauthor={Sebastian Friedl}}
 
@@ -94,12 +93,6 @@
 	\tableofcontents
 
 	\clearpage
-	
-	\subsection*{Important note}
-	\addcontentsline{toc}{subsection}{Important note}
-	Since the MWG logo included in the footline by default consists of a Ti\textit{k}Z source up to 5\,850~lines long, presentations may compile very long time. This can be very nasty, especially during the process of creating the presentation. \\
-	\emph{To reduce the amount of time required for compiling, the theme uses a simplified version of the logo.} Simplified means that details not visible to your audience got removed, resulting in a reduction of compilation time to approx. $\tfrac13$. However, the detailed version is still available when using the \texttt{hqlogo} option. \\
-	You can remove the logo \emph{temporary} by passing the \texttt{draft} option or \emph{permanently} by passing other options. See section \ref{themeoptions} for further details.
 	
 	
 	\subsection*{Dependencies and other requirements}
@@ -154,8 +147,10 @@
 		This work has the LPPL maintenace status 'maintained'. The current maintainer of this work is Sebastian Friedl. \\
 		This work consists of the following files:
 		\begin{itemize} \itemsep 0pt
-			\item \texttt{beamerthemeMWG.sty} and
-			\item \texttt{beamerthemeMWG\_documentation.tex}
+			\item "beamerthemeMWG.sty",
+			\item "beamerthemeMWGLogo.pdf",
+			\item "beamerthemeMWGLogo.eps" and
+			\item "beamerthemeMWG_documentation.tex"
 		\end{itemize}
 	\end{small}
 	
@@ -187,10 +182,6 @@
     \medskip
     \DescribeMacro{externallogo}
     Removes the logo from the footline and the logo specified with the \mintinline{LaTeX}{\logo} command will be shown on the right--hand side directly above the footline
-    
-    \medskip
-    \DescribeMacro{hqlogo}
-    Uses the detailed version of the logo instead of the simplified one
     
     \medskip
 	\DescribeMacro{nosmallcaps}
